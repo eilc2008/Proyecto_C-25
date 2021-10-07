@@ -20,7 +20,7 @@ function setup() {
 	groundObject=new ground(width/2,670,width,20);
 	dustbinObj=new dustbin(1200,650);
 
-	paperObject = new Paper(200,600,50,50);
+	paperObject = new Paper(200,640,50,50);
 
 	Engine.run(engine);
   
@@ -33,15 +33,14 @@ function draw() {
  
 
   groundObject.display();
+  paperObject.display();
   dustbinObj.display();
 
-  paperObject.display();
-
-  keyPressed();
+  //keyPressed();
 }
 
 function keyPressed(){
 	if(keyDown("UP_ARROW")){
-		Matter.Body.applyForce(paperObject.body,paperObject.body.position,{x:15,y:-15});
+		Matter.Body.applyForce(paperObject.body,paperObject.body.position,{x:50,y:-50});
 	}
 }
